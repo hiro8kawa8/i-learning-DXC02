@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  # 任意の PVC 名
+  name: nginx-pvc
+spec:
+  # アクセスモード:
+  # - ReadWriteMany (複数ノード RW)
+  # - ReadWriteOnce (単一ノード RW)
+  # - ReadOnlyMany (複数ノード R)
+  accessModes:
+    - ReadWriteOnce
+  # 今回は演習環境のSCからmicrok8s-hostpath を指定
+  storageClassName: microk8s-hostpath
+  resources:
+    requests:
+      # 利用したいストレージのサイズ
+      storage: 1Gi

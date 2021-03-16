@@ -1,0 +1,8 @@
+apiVersion: v1 # 表3-4-1: Pod API
+kind: Pod
+metadata:
+  name: nginx-yaml
+spec: # 表3-4-2: Pod 仕様
+  containers: # 表3-4-3: コンテナ起動条件などの設定情報
+    - name: nginx
+      image: nginx:latest
